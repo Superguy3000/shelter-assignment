@@ -1,0 +1,9 @@
+{
+    "shelter_name": "Last Hope",
+    "leader": "Superguy",
+    "survivors": 8,
+    "food": 20,
+    "water": 50,
+    "barricade_health": 50,
+    "radio_working": true
+}
