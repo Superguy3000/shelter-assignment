@@ -36,7 +36,7 @@ def change_info():
     while True:
            decision2 = gen.secure("Enter the value you want to change or finish modifying(Q): ","any",1)
            if decision2  in ["shelter_name", "leader"]:
-               general_check(decision2,"Enter Nonempty text: ",str)
+               general_check(decision2,"Enter Nonempty text: ","any",1)
            elif decision2  in ["survivors","food","water"]:
                general_check(decision2,"Enter a positive whole number: ",int)
            elif decision2  in ["barricade_health"]:
@@ -64,12 +64,12 @@ def radio_check(decision2):
     """does what general_check() does but specificaly for the radio"""
     val1 = shelter_data[decision2]
     while True:
-        a = input("Enter a boolean: ")
-        if type(a) == bool:
-            shelter_data[decision2] = a
+        a = gen.secure("Enter 1 for working,0 for not working: ",int,0,1)
+        if a == 1:
+            shelter_data[decision2] = True
             break
-        else:
-            print("Invalid")
+        elif a == 0:
+            shelter_data[decision2] = False
     add(changes,decision2,val1,shelter_data[decision2])
 
 def main():
